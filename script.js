@@ -1,25 +1,27 @@
 //complete this code
 class Animal {
-	constructor(species){
-		this.species=species;
-	}
-	get species(){
-		return this.species;
-	}
-	makeSound() {
+  constructor(species) {
+    this._species = species; // Use a private field to avoid recursion
+  }
+  
+  get species() {
+    return this._species; // Return the private field
+  }
+
+  makeSound() {
     console.log(`The ${this.species} makes a sound`);
   }
 }
 
 class Dog extends Animal {
-	 purr() {
-    console.log("purr");
+  bark() {
+    console.log("woof"); // Logs the sound a dog makes
   }
 }
 
 class Cat extends Animal {
-	bark() {
-    console.log("woof");
+  purr() {
+    console.log("purr"); // Logs the sound a cat makes
   }
 }
 
